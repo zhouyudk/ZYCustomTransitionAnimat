@@ -25,14 +25,14 @@ class ViewController: UIViewController,UINavigationControllerDelegate {
     @IBAction func presentAnimat(_ sender: Any) {
         let vc = ZYSecondViewController()
         vc.transitioningDelegate = vc
-        vc.presentanimatType = .circle
+        vc.zy_presentanimatType = .circle
         self.present(vc, animated: true, completion: nil)
     }
 
     @IBAction func pushButtonHandle(_ sender: Any) {
         let vc = ZYSecondViewController()
         vc.transitioningDelegate = vc
-        vc.presentanimatType = .asPush
+        vc.zy_presentanimatType = .asPush
         self.present(vc, animated: true, completion: nil)
     }
 }

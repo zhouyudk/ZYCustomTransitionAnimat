@@ -56,3 +56,13 @@ extension UIViewController {
     }
 }
 
+extension UIViewController: UIViewControllerTransitioningDelegate {
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return presentanimatType.presentAnimat
+        //ZYPresentDismissCircleAnimat()
+    }
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return presentanimatType.dismissAnimat
+    }
+}
+

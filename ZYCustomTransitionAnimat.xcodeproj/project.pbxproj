@@ -17,7 +17,7 @@
 		B53406D1212D3F7300501825 /* ZYPresentDismissCircleAnimat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53406D0212D3F7300501825 /* ZYPresentDismissCircleAnimat.swift */; };
 		B57C4C74213008B3006BC0AE /* ZYPresentAsPushAnimat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57C4C73213008B3006BC0AE /* ZYPresentAsPushAnimat.swift */; };
 		B57C4C76213008D2006BC0AE /* ZYDismissAsPopAnimat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57C4C75213008D2006BC0AE /* ZYDismissAsPopAnimat.swift */; };
-		B57C4C7E213014BE006BC0AE /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57C4C7D213014BE006BC0AE /* UIViewController+Extension.swift */; };
+		B5C79CF72133F0DC000B6D0F /* UIViewController+ZYExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C79CF62133F0DC000B6D0F /* UIViewController+ZYExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		B53406D0212D3F7300501825 /* ZYPresentDismissCircleAnimat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPresentDismissCircleAnimat.swift; sourceTree = "<group>"; };
 		B57C4C73213008B3006BC0AE /* ZYPresentAsPushAnimat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPresentAsPushAnimat.swift; sourceTree = "<group>"; };
 		B57C4C75213008D2006BC0AE /* ZYDismissAsPopAnimat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYDismissAsPopAnimat.swift; sourceTree = "<group>"; };
-		B57C4C7D213014BE006BC0AE /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		B5C79CF62133F0DC000B6D0F /* UIViewController+ZYExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ZYExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,6 @@
 				B53406C5212CF9FD00501825 /* Animats */,
 				B53406A7212BC5BF00501825 /* AppDelegate.swift */,
 				B53406A9212BC5BF00501825 /* ViewController.swift */,
-				B57C4C7D213014BE006BC0AE /* UIViewController+Extension.swift */,
 				B53406CA212D294800501825 /* ZYSecondViewController.swift */,
 				B53406CB212D294800501825 /* ZYSecondViewController.xib */,
 				B53406AB212BC5BF00501825 /* Main.storyboard */,
@@ -86,6 +85,7 @@
 				B53406D0212D3F7300501825 /* ZYPresentDismissCircleAnimat.swift */,
 				B57C4C73213008B3006BC0AE /* ZYPresentAsPushAnimat.swift */,
 				B57C4C75213008D2006BC0AE /* ZYDismissAsPopAnimat.swift */,
+				B5C79CF62133F0DC000B6D0F /* UIViewController+ZYExtension.swift */,
 			);
 			path = Animats;
 			sourceTree = "<group>";
@@ -163,12 +163,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B57C4C7E213014BE006BC0AE /* UIViewController+Extension.swift in Sources */,
 				B53406D1212D3F7300501825 /* ZYPresentDismissCircleAnimat.swift in Sources */,
 				B57C4C76213008D2006BC0AE /* ZYDismissAsPopAnimat.swift in Sources */,
 				B53406CC212D294800501825 /* ZYSecondViewController.swift in Sources */,
 				B57C4C74213008B3006BC0AE /* ZYPresentAsPushAnimat.swift in Sources */,
 				B53406AA212BC5BF00501825 /* ViewController.swift in Sources */,
+				B5C79CF72133F0DC000B6D0F /* UIViewController+ZYExtension.swift in Sources */,
 				B53406A8212BC5BF00501825 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
