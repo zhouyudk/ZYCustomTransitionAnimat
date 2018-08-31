@@ -1,5 +1,5 @@
 //
-//  ZYDismissAsPopAnimat.swift
+//  ZYDismissAsPopAnimation.swift
 //  ZYCustomTransitionAnimat
 //
 //  Created by yu zhou on 24/08/2018.
@@ -8,12 +8,8 @@
 
 import UIKit
 
-class ZYDismissAsPopAnimat: NSObject,UIViewControllerAnimatedTransitioning {
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.75
-    }
-    
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+class ZYDismissAsPopAnimation: ZYAnimation {
+    override func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let toView = transitionContext.view(forKey: .to)
         let fromView = transitionContext.view(forKey: .from)
         
@@ -25,7 +21,7 @@ class ZYDismissAsPopAnimat: NSObject,UIViewControllerAnimatedTransitioning {
         toView?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         fromView?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         toView?.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        UIView.animate(withDuration: 0.75, animations: {
+        UIView.animate(withDuration: ZYPresentSpreadAnimation.duration, animations: {
             toView?.transform = CGAffineTransform(scaleX: 1, y: 1)
             fromView?.frame = CGRect(x: UIScreen.main.bounds.width, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         }) { (finish) in

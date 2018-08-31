@@ -1,5 +1,5 @@
 //
-//  ZYPresentAsPushAnimat.swift
+//  ZYPresentAsPushAnimation.swift
 //  ZYCustomTransitionAnimat
 //
 //  Created by yu zhou on 24/08/2018.
@@ -8,12 +8,8 @@
 
 import UIKit
 
-class ZYPresentAsPushAnimat: NSObject,UIViewControllerAnimatedTransitioning {
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.75
-    }
-    
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+class ZYPresentAsPushAnimation: ZYAnimation {
+    override func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let toView = transitionContext.view(forKey: .to)
         let fromView = transitionContext.view(forKey: .from)
         
@@ -25,7 +21,7 @@ class ZYPresentAsPushAnimat: NSObject,UIViewControllerAnimatedTransitioning {
         toView?.frame = CGRect(x: UIScreen.main.bounds.width, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         fromView?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         
-        UIView.animate(withDuration: 0.75, animations: {
+        UIView.animate(withDuration: ZYPresentSpreadAnimation.duration, animations: {
             fromView?.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
             toView?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         }) { (finish) in

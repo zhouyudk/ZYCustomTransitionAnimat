@@ -18,59 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J83-il-b6E">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bKG-6S-Mh5">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Qfu-bk-nIz">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIP-hS-u3I">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="JQv-Hx-06g"/>
-                                                </constraints>
-                                                <state key="normal" title="present圆形转场"/>
-                                                <connections>
-                                                    <action selector="presentAnimat:" destination="Dsl-so-hlr" eventType="touchUpInside" id="ZIb-1t-C1H"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXi-rZ-Ebf">
-                                                <rect key="frame" x="0.0" y="50" width="375" height="50"/>
-                                                <color key="backgroundColor" red="0.68269300659991528" green="0.96621346473693848" blue="0.68860831929483379" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="pj6-as-HdN"/>
-                                                </constraints>
-                                                <state key="normal" title="present仿push转场"/>
-                                                <connections>
-                                                    <action selector="pushButtonHandle:" destination="Dsl-so-hlr" eventType="touchUpInside" id="Kyb-F0-HGU"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="kXi-rZ-Ebf" firstAttribute="centerX" secondItem="aIP-hS-u3I" secondAttribute="centerX" id="d8h-qm-Maj"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Qfu-bk-nIz" firstAttribute="leading" secondItem="J83-il-b6E" secondAttribute="leading" id="NUB-y8-jkf"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qfu-bk-nIz" secondAttribute="trailing" id="Nn1-hX-NW8"/>
-                                    <constraint firstItem="Qfu-bk-nIz" firstAttribute="width" secondItem="J83-il-b6E" secondAttribute="width" id="Nqq-Id-6Wy"/>
-                                    <constraint firstItem="Qfu-bk-nIz" firstAttribute="top" secondItem="J83-il-b6E" secondAttribute="top" id="f4a-gG-kKG"/>
-                                    <constraint firstAttribute="bottom" secondItem="Qfu-bk-nIz" secondAttribute="bottom" id="ik5-89-wjd"/>
-                                </constraints>
-                            </scrollView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Dsl-so-hlr" id="Cmy-Ag-0bt"/>
+                                    <outlet property="delegate" destination="Dsl-so-hlr" id="ZZe-sP-iEo"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7Jj-AE-o43" firstAttribute="trailing" secondItem="J83-il-b6E" secondAttribute="trailing" id="C4a-CD-iDe"/>
-                            <constraint firstItem="7Jj-AE-o43" firstAttribute="bottom" secondItem="J83-il-b6E" secondAttribute="bottom" id="SFe-0z-Kfv"/>
-                            <constraint firstItem="J83-il-b6E" firstAttribute="top" secondItem="7Jj-AE-o43" secondAttribute="top" id="y0P-he-e97"/>
-                            <constraint firstItem="J83-il-b6E" firstAttribute="leading" secondItem="7Jj-AE-o43" secondAttribute="leading" id="y5m-rU-0Ra"/>
+                            <constraint firstItem="7Jj-AE-o43" firstAttribute="trailing" secondItem="bKG-6S-Mh5" secondAttribute="trailing" id="Grv-xZ-DGn"/>
+                            <constraint firstItem="7Jj-AE-o43" firstAttribute="bottom" secondItem="bKG-6S-Mh5" secondAttribute="bottom" id="Rtf-38-X6j"/>
+                            <constraint firstItem="bKG-6S-Mh5" firstAttribute="leading" secondItem="7Jj-AE-o43" secondAttribute="leading" id="iat-Gq-4lX"/>
+                            <constraint firstItem="bKG-6S-Mh5" firstAttribute="top" secondItem="7Jj-AE-o43" secondAttribute="top" id="wot-1H-tTy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Jj-AE-o43"/>
                     </view>
                     <navigationItem key="navigationItem" title="导航栏" id="fra-Wr-2Ag"/>
+                    <connections>
+                        <outlet property="tableView" destination="bKG-6S-Mh5" id="gWW-37-whY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6C0-Rs-rnd" sceneMemberID="firstResponder"/>
             </objects>

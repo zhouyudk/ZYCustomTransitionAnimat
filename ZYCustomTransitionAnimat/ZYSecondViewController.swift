@@ -20,8 +20,6 @@ class ZYSecondViewController: UIViewController,UINavigationControllerDelegate {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.transitioningDelegate = self
-        zy_addInteractiveTransitionGesture()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +28,7 @@ class ZYSecondViewController: UIViewController,UINavigationControllerDelegate {
     }
     
     @IBAction func dismissButtonHandle(_ sender: Any) {
+//        self.zy_dismiss(completion: nil)
         self.dismiss(animated: true, completion: nil)
     }
 }

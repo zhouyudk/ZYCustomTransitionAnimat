@@ -8,20 +8,58 @@
 
 import UIKit
 
+typealias SpreadDirection = UIViewController.PresentAnimatType.SpreadDirection
+typealias OpenDirection = UIViewController.PresentAnimatType.OpenDirection
+typealias PresentAnimatType = UIViewController.PresentAnimatType
+
+// MARK: - present&dismiss方法扩展
+extension UIViewController {
+    func zy_present(_ vc:UIViewController,animatType:PresentAnimatType,completion:(()->Void)?){
+        vc.transitioningDelegate = vc
+        vc.zy_presentanimatType = animatType
+        vc.zy_addInteractiveTransitionGesture()
+        self.present(vc, animated: true, completion: completion)
+    }
+    func zy_dismiss(completion:(()->Void)?) {
+        self.transitioningDelegate = self
+        self.dismiss(animated: true, completion: completion)
+    }
+}
+
+
+// MARK: - 动画扩展
 extension UIViewController:UIViewControllerTransitioningDelegate {
     
     /// 动画类型枚举
     public enum PresentAnimatType{
         case circle
         case asPush
+        case spread(SpreadDirection)
+        case page
+        case asOpen(OpenDirection)
         
+        public enum SpreadDirection {
+            case left,right,top,bottom,center
+        }
+        public enum OpenDirection{
+            case horizontal,vertical
+        }
+
         var presentAnimat: UIViewControllerAnimatedTransitioning{
             get{
                 switch self {
                 case .circle:
-                    return ZYPresentDismissCircleAnimat()
+                    return ZYPresentCircleAnimation()
                 case .asPush:
-                    return ZYPresentAsPushAnimat()
+                    return ZYPresentAsPushAnimation()
+                case let .spread(d):
+                    return ZYPresentSpreadAnimation(direction: d)
+                case .page:
+                    return ZYPresentPageAnimation()
+                case let .asOpen(d):
+                    return ZYPresentAsOpenAnimation(direction: d)
+                default:
+                    return ZYPresentAsPushAnimation()
                 }
             }
         }
@@ -30,9 +68,17 @@ extension UIViewController:UIViewControllerTransitioningDelegate {
             get{
                 switch self {
                 case .circle:
-                    return ZYPresentDismissCircleAnimat()
+                    return ZYDismissCircleAnimation()
                 case .asPush:
-                    return ZYDismissAsPopAnimat()
+                    return ZYDismissAsPopAnimation()
+                case let .spread(d):
+                    return ZYDismissSpreadAnimation(direction: d)
+                case .page:
+                    return ZYDismissPageAnimation()
+                case let .asOpen(d):
+                    return ZYDismissAsCloseAnimation(direction: d)
+                default:
+                    return ZYDismissAsPopAnimation()
                 }
             }
         }
@@ -74,7 +120,7 @@ extension UIViewController:UIViewControllerTransitioningDelegate {
     public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return self.interactiveTransition ?? nil
     }
-    public func zy_addInteractiveTransitionGesture() {
+    internal func zy_addInteractiveTransitionGesture() {
         let pan = UIPanGestureRecognizer()
         pan.addTarget(self, action: #selector(zy_panGestureRecognizerAction(pan:)))
         self.view.addGestureRecognizer(pan)

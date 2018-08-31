@@ -34,6 +34,7 @@
                 <constraint firstItem="gvD-XR-EsX" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iY5-lw-4ry"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-435" y="-28"/>
         </view>
     </objects>
 </document>
