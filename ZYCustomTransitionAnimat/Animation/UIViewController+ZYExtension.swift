@@ -8,10 +8,6 @@
 
 import UIKit
 
-//typealias SpreadDirection = UIViewController.PresentAnimatType.SpreadDirection
-//typealias OpenDirection = UIViewController.PresentAnimatType.OpenDirection
-//typealias PresentAnimatType = UIViewController.PresentAnimatType
-
 // MARK: - present&dismiss方法扩展
 extension UIViewController {
     
@@ -26,7 +22,12 @@ extension UIViewController {
         vc.transitioningDelegate = vc
         vc.zy_presentanimatType = animatType
         if isInteractive {
-            vc.zy_addInteractiveTransitionGesture()
+            switch animatType{
+            case .fold:
+                break
+            default:
+                vc.zy_addInteractiveTransitionGesture()
+            }
         }
         self.present(vc, animated: true, completion: completion)
     }

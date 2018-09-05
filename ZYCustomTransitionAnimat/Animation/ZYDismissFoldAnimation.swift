@@ -60,9 +60,14 @@ class ZYDismissFoldAnimation: ZYAnimation,ZYFoldDelegate {
         closeAnimation.isRemovedOnCompletion = false
         closeAnimation.duration = ZYAnimation.duration+0.5
         closeAnimation.delegate = self
-        toView.layer.add(closeAnimation, forKey: "position")
+        toView.layer.add(closeAnimation, forKey: "position")//加在layer上的动画要在结束时删除，否则会影响其他的动画
         self.animationEndClosure = {
-            toView.frame = containerView.frame
+            if transitionContext.transitionWasCancelled{
+                toView.removeFromSuperview()
+            }else{
+                toView.frame = containerView.frame
+            }
+            toView.layer.removeAllAnimations()
             paperFoldingLayer.removeFromSuperlayer()
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }

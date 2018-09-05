@@ -289,6 +289,7 @@ class ZYPresentFoldAnimation: ZYAnimation,ZYFoldDelegate {
         self.animationEndClosure = {
             fromView.frame = containerView.frame
             paperFoldingLayer.removeFromSuperlayer()
+            fromView.layer.removeAllAnimations()
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
         
