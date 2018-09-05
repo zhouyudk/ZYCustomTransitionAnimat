@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZYCustomTransitionAnimat/Animation/ZYPresentPageAnimation.swift"
-            timestampString = "557390401.232794"
+            timestampString = "557718887.065334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZYCustomTransitionAnimat/Animation/ZYPresentAsOpenAnimation.swift"
-            timestampString = "557390401.232873"
+            timestampString = "557722936.19872"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZYCustomTransitionAnimat/Animation/UIImage+ZYExtension.swift"
-            timestampString = "557380187.33321"
+            timestampString = "557722936.198779"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "subImage(rect:)"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "clip(rect:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,12 +74,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZYCustomTransitionAnimat/Animation/ZYPresentAsOpenAnimation.swift"
-            timestampString = "557390401.233037"
+            timestampString = "557722936.198824"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
             endingLineNumber = "49"
             landmarkName = "animateTransition(using:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZYCustomTransitionAnimat/Animation/PaperFolding.swift"
+            timestampString = "557811787.223909"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "showPaperFoldingTransition(with:numberOf:duration:direction:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZYCustomTransitionAnimat/Animation/ZYAnimation.swift"
+            timestampString = "557811787.224066"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "animationDidStop(_:finished:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

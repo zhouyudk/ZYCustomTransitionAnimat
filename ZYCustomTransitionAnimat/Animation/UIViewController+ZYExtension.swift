@@ -8,16 +8,26 @@
 
 import UIKit
 
-typealias SpreadDirection = UIViewController.PresentAnimatType.SpreadDirection
-typealias OpenDirection = UIViewController.PresentAnimatType.OpenDirection
-typealias PresentAnimatType = UIViewController.PresentAnimatType
+//typealias SpreadDirection = UIViewController.PresentAnimatType.SpreadDirection
+//typealias OpenDirection = UIViewController.PresentAnimatType.OpenDirection
+//typealias PresentAnimatType = UIViewController.PresentAnimatType
 
 // MARK: - present&dismiss方法扩展
 extension UIViewController {
-    func zy_present(_ vc:UIViewController,animatType:PresentAnimatType,completion:(()->Void)?){
+    
+    /// 定制present方法
+    ///
+    /// - Parameters:
+    ///   - vc: 目标viewController
+    ///   - animatType: 动画类型PresentAnimatType
+    ///   - isInteractive: 是否需要交互，false则不添加手势，默认为true
+    ///   - completion: present完成后的闭包
+    func zy_present(_ vc:UIViewController,animatType:PresentAnimatType,isInteractive:Bool=true,completion:(()->Void)?){
         vc.transitioningDelegate = vc
         vc.zy_presentanimatType = animatType
-        vc.zy_addInteractiveTransitionGesture()
+        if isInteractive {
+            vc.zy_addInteractiveTransitionGesture()
+        }
         self.present(vc, animated: true, completion: completion)
     }
     func zy_dismiss(completion:(()->Void)?) {
@@ -27,63 +37,70 @@ extension UIViewController {
 }
 
 
-// MARK: - 动画扩展
-extension UIViewController:UIViewControllerTransitioningDelegate {
-    
-    /// 动画类型枚举
-    public enum PresentAnimatType{
-        case circle
-        case asPush
-        case spread(SpreadDirection)
-        case page
-        case asOpen(OpenDirection)
-        
-        public enum SpreadDirection {
-            case left,right,top,bottom,center
-        }
-        public enum OpenDirection{
-            case horizontal,vertical
-        }
-
-        var presentAnimat: UIViewControllerAnimatedTransitioning{
-            get{
-                switch self {
-                case .circle:
-                    return ZYPresentCircleAnimation()
-                case .asPush:
-                    return ZYPresentAsPushAnimation()
-                case let .spread(d):
-                    return ZYPresentSpreadAnimation(direction: d)
-                case .page:
-                    return ZYPresentPageAnimation()
-                case let .asOpen(d):
-                    return ZYPresentAsOpenAnimation(direction: d)
-                default:
-                    return ZYPresentAsPushAnimation()
-                }
-            }
-        }
-        
-        var dismissAnimat: UIViewControllerAnimatedTransitioning{
-            get{
-                switch self {
-                case .circle:
-                    return ZYDismissCircleAnimation()
-                case .asPush:
-                    return ZYDismissAsPopAnimation()
-                case let .spread(d):
-                    return ZYDismissSpreadAnimation(direction: d)
-                case .page:
-                    return ZYDismissPageAnimation()
-                case let .asOpen(d):
-                    return ZYDismissAsCloseAnimation(direction: d)
-                default:
-                    return ZYDismissAsPopAnimation()
-                }
+public enum SpreadDirection:Int {
+    case left=0,right,top,bottom
+}
+public enum OpenDirection{
+    case horizontal,vertical
+}
+///MARK: - 动画类型枚举
+public enum PresentAnimatType{
+    case circle
+    case asPush
+    case spread(SpreadDirection)
+    case page
+    case asOpen(OpenDirection)
+    case asKugou
+    case fold(SpreadDirection)
+    var presentAnimat: UIViewControllerAnimatedTransitioning{
+        get{
+            switch self {
+            case .circle:
+                return ZYPresentCircleAnimation()
+            case .asPush:
+                return ZYPresentAsPushAnimation()
+            case let .spread(d):
+                return ZYPresentSpreadAnimation(direction: d)
+            case .page:
+                return ZYPresentPageAnimation()
+            case let .asOpen(d):
+                return ZYPresentAsOpenAnimation(direction: d)
+            case .asKugou:
+                return ZYPresentAsKugouAnimation()
+            case let .fold(d):
+                return ZYPresentFoldAnimation(direction: d)
+            default:
+                return ZYPresentAsPushAnimation()
             }
         }
     }
     
+    var dismissAnimat: UIViewControllerAnimatedTransitioning{
+        get{
+            switch self {
+            case .circle:
+                return ZYDismissCircleAnimation()
+            case .asPush:
+                return ZYDismissAsPopAnimation()
+            case let .spread(d):
+                return ZYDismissSpreadAnimation(direction: d)
+            case .page:
+                return ZYDismissPageAnimation()
+            case let .asOpen(d):
+                return ZYDismissAsCloseAnimation(direction: d)
+            case .asKugou:
+                return ZYDismissAsKugouAnimation()
+            case let .fold(d):
+                return ZYDismissFoldAnimation(direction: d)
+            default:
+                return ZYDismissAsPopAnimation()
+            }
+        }
+    }
+}
+    
+// MARK: - 动画扩展
+extension UIViewController:UIViewControllerTransitioningDelegate {
     /// 关联属性
     private struct AssociatedKeys {
         static var presentanimatType: PresentAnimatType = .asPush

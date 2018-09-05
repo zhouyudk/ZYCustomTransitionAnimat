@@ -32,7 +32,7 @@ class ZYPresentPageAnimation: ZYAnimation {
         containerView.layer.sublayerTransform = transfrom3d
 
         UIView.animate(withDuration: ZYAnimation.duration, animations: {
-            fromViewSnapshot.layer.transform = CATransform3DMakeRotation(CGFloat(-Double.pi/2.665), 0, 1, 0)
+            fromViewSnapshot.layer.transform = CATransform3DMakeRotation(CGFloat(-Double.pi/2), 0, 1, 0)
         }) { (finish) in
             if transitionContext.transitionWasCancelled {
                 fromViewSnapshot.removeFromSuperview()

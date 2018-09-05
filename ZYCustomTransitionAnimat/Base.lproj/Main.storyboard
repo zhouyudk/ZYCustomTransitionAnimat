@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="F5u-dU-Y4l">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bKG-6S-Mh5">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,8 +33,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7Jj-AE-o43" firstAttribute="trailing" secondItem="bKG-6S-Mh5" secondAttribute="trailing" id="Grv-xZ-DGn"/>
+                            <constraint firstItem="7Jj-AE-o43" firstAttribute="trailing" secondItem="F5u-dU-Y4l" secondAttribute="trailing" id="Nd8-YT-CCA"/>
                             <constraint firstItem="7Jj-AE-o43" firstAttribute="bottom" secondItem="bKG-6S-Mh5" secondAttribute="bottom" id="Rtf-38-X6j"/>
+                            <constraint firstItem="F5u-dU-Y4l" firstAttribute="leading" secondItem="7Jj-AE-o43" secondAttribute="leading" id="SnP-bG-OhO"/>
+                            <constraint firstItem="F5u-dU-Y4l" firstAttribute="top" secondItem="7Jj-AE-o43" secondAttribute="top" id="h7i-ms-6Ci"/>
                             <constraint firstItem="bKG-6S-Mh5" firstAttribute="leading" secondItem="7Jj-AE-o43" secondAttribute="leading" id="iat-Gq-4lX"/>
+                            <constraint firstItem="7Jj-AE-o43" firstAttribute="bottom" secondItem="F5u-dU-Y4l" secondAttribute="bottom" id="ovE-51-9uU"/>
                             <constraint firstItem="bKG-6S-Mh5" firstAttribute="top" secondItem="7Jj-AE-o43" secondAttribute="top" id="wot-1H-tTy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Jj-AE-o43"/>
@@ -100,4 +107,7 @@
             <point key="canvasLocation" x="-7" y="-3"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1" width="510" height="623"/>
+    </resources>
 </document>

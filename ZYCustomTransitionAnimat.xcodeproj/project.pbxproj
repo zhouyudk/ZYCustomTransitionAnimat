@@ -27,6 +27,11 @@
 		B57C4C74213008B3006BC0AE /* ZYPresentAsPushAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57C4C73213008B3006BC0AE /* ZYPresentAsPushAnimation.swift */; };
 		B57C4C76213008D2006BC0AE /* ZYDismissAsPopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57C4C75213008D2006BC0AE /* ZYDismissAsPopAnimation.swift */; };
 		B5C79CF72133F0DC000B6D0F /* UIViewController+ZYExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C79CF62133F0DC000B6D0F /* UIViewController+ZYExtension.swift */; };
+		B5C923BC213CDE1000D838BA /* ZYPresentAsKugouAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C923BB213CDE1000D838BA /* ZYPresentAsKugouAnimation.swift */; };
+		B5C923BE213CDE1F00D838BA /* ZYDismissAsKugouAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C923BD213CDE1F00D838BA /* ZYDismissAsKugouAnimation.swift */; };
+		B5C923C0213D183A00D838BA /* ZYPresentFoldAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C923BF213D183A00D838BA /* ZYPresentFoldAnimation.swift */; };
+		B5C923CC213E206100D838BA /* UIImage+ZYExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C923CB213E206000D838BA /* UIImage+ZYExtension.swift */; };
+		B5D3F42A213E8A1F008C5F46 /* ZYDismissFoldAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3F429213E8A1F008C5F46 /* ZYDismissFoldAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +57,11 @@
 		B57C4C73213008B3006BC0AE /* ZYPresentAsPushAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPresentAsPushAnimation.swift; sourceTree = "<group>"; };
 		B57C4C75213008D2006BC0AE /* ZYDismissAsPopAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYDismissAsPopAnimation.swift; sourceTree = "<group>"; };
 		B5C79CF62133F0DC000B6D0F /* UIViewController+ZYExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ZYExtension.swift"; sourceTree = "<group>"; };
+		B5C923BB213CDE1000D838BA /* ZYPresentAsKugouAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPresentAsKugouAnimation.swift; sourceTree = "<group>"; };
+		B5C923BD213CDE1F00D838BA /* ZYDismissAsKugouAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYDismissAsKugouAnimation.swift; sourceTree = "<group>"; };
+		B5C923BF213D183A00D838BA /* ZYPresentFoldAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPresentFoldAnimation.swift; sourceTree = "<group>"; };
+		B5C923CB213E206000D838BA /* UIImage+ZYExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ZYExtension.swift"; sourceTree = "<group>"; };
+		B5D3F429213E8A1F008C5F46 /* ZYDismissFoldAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYDismissFoldAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +112,7 @@
 			children = (
 				B5C79CF62133F0DC000B6D0F /* UIViewController+ZYExtension.swift */,
 				B55542F62137FADE005C053B /* UIView+ZYExtension.swift */,
+				B5C923CB213E206000D838BA /* UIImage+ZYExtension.swift */,
 				B55542E72134037F005C053B /* ZYAnimation.swift */,
 				B53406D0212D3F7300501825 /* ZYPresentCircleAnimation.swift */,
 				B55542EC2137DD85005C053B /* ZYDismissCircleAnimation.swift */,
@@ -113,6 +124,10 @@
 				B55542F02137DF1C005C053B /* ZYDismissPageAnimation.swift */,
 				B55542F22137F358005C053B /* ZYPresentAsOpenAnimation.swift */,
 				B55542F42137F36C005C053B /* ZYDismissAsCloseAnimation.swift */,
+				B5C923BB213CDE1000D838BA /* ZYPresentAsKugouAnimation.swift */,
+				B5C923BD213CDE1F00D838BA /* ZYDismissAsKugouAnimation.swift */,
+				B5C923BF213D183A00D838BA /* ZYPresentFoldAnimation.swift */,
+				B5D3F429213E8A1F008C5F46 /* ZYDismissFoldAnimation.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -192,13 +207,16 @@
 			files = (
 				B55542EF2137DF05005C053B /* ZYPresentPageAnimation.swift in Sources */,
 				B53406D1212D3F7300501825 /* ZYPresentCircleAnimation.swift in Sources */,
+				B5C923BE213CDE1F00D838BA /* ZYDismissAsKugouAnimation.swift in Sources */,
 				B57C4C76213008D2006BC0AE /* ZYDismissAsPopAnimation.swift in Sources */,
 				B53406CC212D294800501825 /* ZYSecondViewController.swift in Sources */,
 				B55542EA21378DED005C053B /* ZYDismissSpreadAnimation.swift in Sources */,
 				B55542E62134034C005C053B /* ZYPresentSpreadAnimation.swift in Sources */,
 				B57C4C74213008B3006BC0AE /* ZYPresentAsPushAnimation.swift in Sources */,
+				B5C923CC213E206100D838BA /* UIImage+ZYExtension.swift in Sources */,
 				B55542F72137FADE005C053B /* UIView+ZYExtension.swift in Sources */,
 				B55542F52137F36C005C053B /* ZYDismissAsCloseAnimation.swift in Sources */,
+				B5C923C0213D183A00D838BA /* ZYPresentFoldAnimation.swift in Sources */,
 				B55542F32137F358005C053B /* ZYPresentAsOpenAnimation.swift in Sources */,
 				B53406AA212BC5BF00501825 /* ViewController.swift in Sources */,
 				B55542E82134037F005C053B /* ZYAnimation.swift in Sources */,
@@ -206,6 +224,8 @@
 				B55542F12137DF1C005C053B /* ZYDismissPageAnimation.swift in Sources */,
 				B53406A8212BC5BF00501825 /* AppDelegate.swift in Sources */,
 				B55542ED2137DD85005C053B /* ZYDismissCircleAnimation.swift in Sources */,
+				B5C923BC213CDE1000D838BA /* ZYPresentAsKugouAnimation.swift in Sources */,
+				B5D3F42A213E8A1F008C5F46 /* ZYDismissFoldAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

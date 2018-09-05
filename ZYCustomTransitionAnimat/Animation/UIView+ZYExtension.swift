@@ -9,12 +9,9 @@
 import UIKit
 
 extension UIView {
-    func zy_snapshot(rect:CGRect) -> UIImage {
+    func zy_snapshot() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0)
-        let context = UIGraphicsGetCurrentContext()
-        context?.saveGState()
-        UIRectClip(rect)
-        self.layer.render(in: context!)
+        self.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext();
         return image!
