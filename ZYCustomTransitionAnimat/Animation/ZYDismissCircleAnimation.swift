@@ -35,7 +35,7 @@ class ZYDismissCircleAnimation: ZYAnimation {
         maskLayerAnimat.fromValue = startPath.cgPath
         maskLayerAnimat.toValue  = endPath.cgPath
         maskLayerAnimat.duration = ZYPresentSpreadAnimation.duration
-        maskLayerAnimat.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        maskLayerAnimat.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         maskLayerAnimat.delegate = self
         maskLayer.add(maskLayerAnimat, forKey: "present")
         

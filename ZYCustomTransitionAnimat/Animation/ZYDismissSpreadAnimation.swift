@@ -39,8 +39,6 @@ class ZYDismissSpreadAnimation: ZYAnimation {
             endPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: screenWidth, height: 1))
         case .bottom :
             endPath = UIBezierPath(rect: CGRect(x: 0, y: screenHeight, width: screenWidth, height: 1))
-        default:
-            break
         }
         
         let maskLayer = CAShapeLayer()
@@ -52,7 +50,7 @@ class ZYDismissSpreadAnimation: ZYAnimation {
         animation.toValue = endPath.cgPath
         animation.duration = ZYAnimation.duration
         animation.delegate = self
-        animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        animation.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeOut)
         maskLayer.add(animation, forKey: "next")
         
         self.animationEndClosure = {

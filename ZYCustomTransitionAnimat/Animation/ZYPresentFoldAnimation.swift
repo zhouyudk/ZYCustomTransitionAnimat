@@ -223,7 +223,7 @@ extension CAKeyframeAnimation {
             time += timeStep
         }
         // we want linear animation between keyframes, with equal time steps
-        animation.calculationMode = kCAAnimationLinear
+        animation.calculationMode = CAAnimationCalculationMode.linear
         // set keyframes and we're done
         animation.values = values
         return animation
@@ -280,7 +280,7 @@ class ZYPresentFoldAnimation: ZYAnimation,ZYFoldDelegate {
                                                           function: openFunction,
                                                           fromValue: fromValue,
                                                           toValue: toValue)
-        openAnimation.fillMode = kCAFillModeForwards
+        openAnimation.fillMode = CAMediaTimingFillMode.forwards
         openAnimation.isRemovedOnCompletion = false
         openAnimation.duration = ZYAnimation.duration+0.5
         openAnimation.delegate = self

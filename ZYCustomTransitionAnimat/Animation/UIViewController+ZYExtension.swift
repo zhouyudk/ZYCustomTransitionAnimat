@@ -20,6 +20,7 @@ extension UIViewController {
     ///   - completion: present完成后的闭包
     func zy_present(_ vc:UIViewController,animatType:PresentAnimatType,isInteractive:Bool=true,completion:(()->Void)?){
         vc.transitioningDelegate = vc
+        vc.modalPresentationStyle = .fullScreen
         vc.zy_presentanimatType = animatType
         if isInteractive {
             switch animatType{
@@ -70,8 +71,6 @@ public enum PresentAnimatType{
                 return ZYPresentAsKugouAnimation()
             case let .fold(d):
                 return ZYPresentFoldAnimation(direction: d)
-            default:
-                return ZYPresentAsPushAnimation()
             }
         }
     }
@@ -93,8 +92,6 @@ public enum PresentAnimatType{
                 return ZYDismissAsKugouAnimation()
             case let .fold(d):
                 return ZYDismissFoldAnimation(direction: d)
-            default:
-                return ZYDismissAsPopAnimation()
             }
         }
     }

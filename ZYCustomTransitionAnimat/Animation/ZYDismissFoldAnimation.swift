@@ -56,7 +56,7 @@ class ZYDismissFoldAnimation: ZYAnimation,ZYFoldDelegate {
                                                            function: closeFunction,
                                                            fromValue: fromValue,
                                                            toValue: toValue)
-        closeAnimation.fillMode = kCAFillModeForwards
+        closeAnimation.fillMode = CAMediaTimingFillMode.forwards
         closeAnimation.isRemovedOnCompletion = false
         closeAnimation.duration = ZYAnimation.duration+0.5
         closeAnimation.delegate = self
